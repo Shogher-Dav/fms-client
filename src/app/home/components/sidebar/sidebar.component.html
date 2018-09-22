@@ -1,0 +1,40 @@
+<div class="leftside-menu" fxLayout="column">
+      <mat-menu #projectMenu="matMenu" class="menu">
+        <button mat-menu-item>Create project</button>
+      </mat-menu>
+      <button class="sidemenu-btn" mat-raised-button [matMenuTriggerFor]="projectMenu">
+        Projects
+      </button>
+      <mat-menu #reportsMenu="matMenu" class="menu">
+        <button mat-menu-item>List Project</button>
+        <button mat-menu-item>Trial Balance</button>
+        <button mat-menu-item>AR/AP overview</button>
+        <button mat-menu-item>Job statement</button>
+        <button mat-menu-item>Shipment orders</button>
+      </mat-menu>
+      <button class="sidemenu-btn" mat-raised-button [matMenuTriggerFor]="reportsMenu">
+        MW Reports
+      </button>
+
+      <mat-menu #agentMenu="matMenu" class="menu">
+        <button mat-menu-item>Directory</button>
+      </mat-menu>
+      <button class="sidemenu-btn" mat-raised-button [matMenuTriggerFor]="agentMenu">
+        Agent Database
+      </button>
+
+      <mat-menu #systemMenu="matMenu" class="menu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>SOP</button>
+        <button mat-menu-item>Airlines</button>
+        <button mat-menu-item>Airports</button>
+
+
+      </mat-menu>
+      <button class="sidemenu-btn" mat-raised-button  [matMenuTriggerFor]="systemMenu">
+        System
+      </button>
+</div>
+
+
+

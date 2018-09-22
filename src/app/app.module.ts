@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { RouterModule, Routes } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/components/auth.component';
@@ -9,15 +13,28 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/components/login/login.component';
+import { HeaderComponent } from './home/components/header/header.component';
+import { SidebarComponent } from './home/components/sidebar/sidebar.component';
+import { NotificationsComponent } from './home/components/notifications/notifications.component';
+import { JobsComponent } from './home/components/jobs/jobs.component';
+import {HomeState} from './home/store/home.state';
 
+const routes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+];
 
-
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    SidebarComponent,
+    NotificationsComponent,
+    JobsComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +42,9 @@ import { LoginComponent } from './auth/components/login/login.component';
     MaterialModule,
     FormsModule,
     HttpClientModule,
+    NgxsLoggerPluginModule,
+    NgxsModule.forRoot([HomeState]),
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]

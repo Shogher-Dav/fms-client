@@ -1,0 +1,40 @@
+
+.header {
+  .menu {
+    margin: 200px;
+    .mat-menu-content {
+      background: skyblue;
+      color: #FFFFFF;
+    }
+  }
+
+  .mat-button-wrapper {
+    font-size: 40px;
+  }
+
+  .mat-icon {
+    cursor: pointer;
+  }
+}
+.content {
+
+  background-color: #3f51b5;
+}
+
+::ng-deep .mat-select-content{
+  width:2000px;
+  background-color: red;
+  font-size: 10px;
+}
+
+.left {
+  margin-left: 75%;
+  .serch-icon {
+    margin-right: 20px;
+  }
+}
+
+.menu-btn {
+  margin-left: 20px;
+  font-size: 20px;
+}

@@ -1,0 +1,26 @@
+<div class="header">
+<mat-toolbar color="primary" fxLayout="row"  fxLayoutWrap >
+  <mat-toolbar-row>
+    <mat-icon>menu</mat-icon>
+    <mat-menu #appMenu="matMenu" class="menu">
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Help</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu" class="menu-btn">
+      Dataset
+    </button>
+  </mat-toolbar-row>
+    <mat-toolbar-row class="left">
+      <mat-icon class="serch-icon">search</mat-icon>
+      <mat-icon>more_vert</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
+</div>
+
+
+
+
+
+
+
+

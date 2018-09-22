@@ -4,9 +4,17 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatGridListModule,
-  MatCardModule
+  MatCardModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatListModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatTableModule,
 } from '@angular/material';
 import { NgModule } from '@angular/core';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -15,7 +23,16 @@ import { NgModule } from '@angular/core';
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatListModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatTableModule,
+
   ],
   exports: [
     MatButtonModule,
@@ -23,7 +40,15 @@ import { NgModule } from '@angular/core';
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatListModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatTableModule,
   ]
 })
 

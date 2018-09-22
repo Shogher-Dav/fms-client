@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import {AuthRoutingModule} from './auth-routing.module';
+// import {AuthRoutingModule} from './auth-routing.module';
 import {HomeComponent} from '../../home/home.component';
 
 
 @NgModule({
-  imports: [AuthRoutingModule],
+  imports: [],
   declarations: [HomeComponent]
 })
 

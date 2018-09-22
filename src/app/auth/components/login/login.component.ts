@@ -9,12 +9,12 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private routes: Router) {}
+  constructor() {}
 
   ngOnInit() {
   }
   public login() {
-//    this.router.navigate(['/home']);
-//     this.router.navigateByUrl('/home').then(_ => { removeSpinner(); });
+   // this.router.navigate(['/home']);
+   //  this.router.navigateByUrl('/home').then(_ => { removeSpinner(); });
   }
 }
