@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { RouterModule, Routes } from '@angular/router';
-
-
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/components/auth.component';
 import { MaterialModule } from './material';
@@ -18,13 +17,14 @@ import { SidebarComponent } from './home/components/sidebar/sidebar.component';
 import { NotificationsComponent } from './home/components/notifications/notifications.component';
 import { JobsComponent } from './home/components/jobs/jobs.component';
 import {HomeState} from './home/store/home.state';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
 ];
 
-// @ts-ignore
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +42,12 @@ const routes: Routes = [
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    NgxsLoggerPluginModule,
+    NgxsLoggerPluginModule.forRoot({
+      disabled: environment.production
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot({
+      disabled: environment.production
+    }),
     NgxsModule.forRoot([HomeState]),
     RouterModule.forRoot(routes),
   ],

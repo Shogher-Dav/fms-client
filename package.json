@@ -23,6 +23,7 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@ngxs/devtools-plugin": "^3.1.4-dev.master-b50211a",
     "@ngxs/logger-plugin": "^3.1.4-dev.master-b50211a",
     "@ngxs/store": "^3.1.4-dev.master-b50211a",
     "core-js": "^2.5.4",

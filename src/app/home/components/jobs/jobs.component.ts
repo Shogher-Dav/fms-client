@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {IJobs} from '../../../core/interfaces/IJobs';
-import {JobsService} from '../../../core/services/jobs.service';
 import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import {HomeState} from '../../store/home.state';
 import {GetJobs} from '../../actions/home.actions';
-import {MatTableDataSource} from '@angular/material';
+
 @Component({
   selector: 'app-jobs',
   templateUrl: './jobs.component.html',
@@ -14,23 +13,16 @@ import {MatTableDataSource} from '@angular/material';
 })
 
 
-export class JobsComponent implements OnInit {
+export class JobsComponent  {
   public isAir = false;
   public isSea = false;
   public isOther = false;
   public isRoad = false;
   public isRailway = false;
- public  dataSource = new JobsDataSource(this.jobsServise);
- @Select(HomeState.jobs) public jobs$: Observable<boolean>
+  public  dataSource = new JobsDataSource(this.store);
   displayedColumns = ['number', 'date', 'mawb', 'origin', 'destination', 'other'];
-  constructor(
-    private jobsServise: JobsService,
-    private store: Store) {
 
-   }
-  ngOnInit() {
-  //  this.store.dispatch( new GetJobs());
-  }
+  constructor(private store: Store) { }
 
   chooseAir() {
     this.isAir = !this.isAir;
@@ -48,19 +40,22 @@ export class JobsComponent implements OnInit {
     this.isRoad = !this.isRoad;
   }
 
-  chooseRalway() {
+  chooseRailway() {
     this.isRailway = !this.isRailway;
   }
 }
 
 export class JobsDataSource extends DataSource <any> {
   public jobs: IJobs[];
+  @Select(HomeState.jobs) public jobs$: Observable<IJobs[]>;
 
-  constructor(private jobsServise: JobsService){
+  constructor(private store: Store) {
     super();
   }
-  public connect(): Observable<IJobs[]>{
-   return this.jobsServise.getJobs();
+
+  public connect(): Observable<IJobs[]> {
+    this.store.dispatch( new GetJobs());
+    return this.jobs$;
   }
   public disconnect(){}
 }
